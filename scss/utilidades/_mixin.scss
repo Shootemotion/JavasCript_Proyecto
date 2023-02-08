@@ -1,0 +1,28 @@
+//mixin con parametros
+@mixin letrah1(){
+    font-family: $letra_H1;
+    font-size: $altura_5;
+    text-align: center;
+}
+@mixin letrah2(){
+    font-family: $letra_H2;
+    font-size: $altura_4;
+    text-align: center;
+}
+
+@mixin letrah3(){
+    font-family: $letra_H3;
+    font-size: $altura_3;
+    text-align: center;
+}
+@mixin letrah4(){
+    font-family: $letra_H4;
+    font-size: $altura_2;
+    text-align: center;
+}
+
+@mixin letraP(){
+    font-family: $letra_P;
+    font-size: $altura_1;
+    text-align: center;
+}

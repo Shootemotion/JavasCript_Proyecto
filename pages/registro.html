@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <!--TIPOGRAFIA-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Comfortaa:wght@500&family=Dancing+Script:wght@700&family=Indie+Flower&family=Josefin+Sans:wght@200;600&family=Lilita+One&family=Nunito+Sans:wght@400;700&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!--Link a Css-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Registro Historico</title>
+</head>
+<body class="registroPagina">
+ 
+    <header class="cab sticky-top">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-dark ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                        <a class="nav-link active text-light" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Registro</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    <main >
+      <div class="principal">
+
+        
+        <div class="row d-flex justify-content-around text-center  mb-5">
+            <div class="col-5">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <h2>CARGA DE DATOS</h2>
+
+
+                        <div class="col-md-4">
+                            <label for="creador" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                <input type="text" class="form-control" id="creadorAdd" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                Please choose a username.
+                                </div>
+                            </div>
+                            </div>
+
+
+                        <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="fecha" class="form-label">Fecha:</label>
+                            <input type="date" class="form-control" id="fechaAdd" name="fecha">
+                            
+              
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="tipoMovimiento" class="form-label text-light">Entrada</label>
+                            <select class="form-select" id="tipoMovimientoAdd" onchange="listaDependiente()" name="tipoMovimiento">
+                            <option selected disabled value="">Select</option>
+                            <option value="ingreso">Ingreso</option>
+                            <option value="gasto">Gasto</option>
+                            </select>
+                            <div class="invalid-feedback">
+                            Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                        <label for="tipoAdd" class="form-label">State</label>
+                        <select class="form-select" id="tipoAdd" required>
+                            <option selected disabled value="">Select</option>
+                    
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="monto" class="form-label">MONTO</label>
+                            <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">$</span>
+                            <input type="text" class="form-control" id="montoAdd" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                            </div>
+                        </div>
+
+                       
+                        <div class="col-12">
+                        <button class="btn btn-primary" type="submit"  id="guardarDatos" >Guardar</button>
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <!--TABLA CON RESULTADOS  -->
+        <div class="col-4">
+            <h2>RESUMEN</h2>
+            <br><br>
+          <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th ></th>
+                    <th >Ingresos</th>
+                    <th>Gastos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Q Mov.</th>
+                    <td class="green" id="qIngreso"></td>
+                    <td class="yellow" id="qGasto"></td>
+                    </tr>
+                    <tr>
+                    <th>Total</th>
+                    <td class="green" id="totalIngreso"></td>
+                    <td class="yellow" id="totalGasto"></td>       
+            </tbody>
+            </table>
+        
+            </div>
+        </div>
+    
+    
+
+        <div class="tituloBaseDatos">
+            <div  class=" text-center celda">
+              <p>IMG</p>
+        </div>
+  
+            <div  class=" text-center celda">
+                <p>TIPO</p>
+            </div>
+
+            <div  class=" text-center celda">
+                <p>SUBTIPO</p>
+            </div>
+
+            <div  class=" text-center celda">
+                <p>FECHA</p>
+            </div>
+
+            <div  class=" celda">
+                <p>CREADOR</p>
+            </div>
+
+            <div  class=" celda">
+                <p>MONTO</p>
+            </div>
+
+        </div>
+            <div id="baseDatos" class="contenedorBaseDatos">
+
+            
+            </div>
+        
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+     <!--BALANCE FINAL  --> 
+     <div class="d-flex justify-content-center align-items-center">       
+             
+    
+   
+        <div class="row g-6" style="width: 50%;">
+            <div class="col">
+              <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title letraTitleCard">BALANCE TOTAL</h5>
+                  <p class="card-text " id="resultadoBalance"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="/balance.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+/*reset*/
+* {
+    margin: 3px;
+    padding: 0;
+    box-sizing: border-box; 
+    }
+  
+
+//Importa archivos secundarios
+@import "utilidades/variables";
+@import "utilidades/mixin";
+
+
+.registroPagina{
+  background-image: url("../img/fondo_registro.jpg") ;
+  background-size : cover;
+  background-repeat: no-repeat;
+
+  h2{
+    color: aliceblue;
+    font-family: $letra_H2;
+  }
+}
+
+.mainIndex{
+height:  1080px;
+  display: flex;
+    justify-content: center;
+  .home{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: column wrap;
+    gap: 50px;
+  }
+}
+.indexPagina{
+background-image: url("/img/17010-4k.jpg") ;
+background-size : cover;
+background-repeat: no-repeat;
+    .cab{
+      
+        .title{
+        font-family: "Square Peg", cursive !important;
+        display: flex;
+        text-align: center;
+        color: white;  
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='400' preserveAspectRatio='none' viewBox='0 0 1920 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask3710%26quot%3b)' fill='none'%3e%3crect width='1920' height='400' x='0' y='0' fill='url(%23SvgjsRadialGradient3711)'%3e%3c/rect%3e%3cpath d='M1768.56%2c353.56C1811.53%2c352.906%2c1852.044%2c328.644%2c1870.616%2c289.889C1887.267%2c255.143%2c1868.574%2c217.709%2c1849.781%2c184.073C1830.297%2c149.199%2c1808.379%2c110.431%2c1768.56%2c107.225C1724.415%2c103.671%2c1683.2%2c130.546%2c1661.013%2c168.875C1638.782%2c207.28%2c1638.645%2c254.734%2c1660.975%2c293.081C1683.163%2c331.184%2c1724.472%2c354.231%2c1768.56%2c353.56' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M673.772%2c88.235C698.912%2c88.237%2c727.58%2c89.397%2c741.26%2c68.305C755.743%2c45.975%2c749.077%2c16.571%2c734.835%2c-5.913C721.627%2c-26.766%2c698.41%2c-39.753%2c673.772%2c-38.241C651.325%2c-36.863%2c636.476%2c-18.137%2c624.444%2c0.862C611.096%2c21.939%2c594.039%2c46.57%2c606.304%2c68.295C618.661%2c90.183%2c648.637%2c88.233%2c673.772%2c88.235' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M578.457%2c391.739C617.551%2c389.176%2c648.358%2c362.466%2c668.16%2c328.661C688.228%2c294.401%2c699.819%2c252.65%2c680.128%2c218.171C660.313%2c183.475%2c618.407%2c170.935%2c578.457%2c171.589C539.8%2c172.222%2c503.722%2c189.162%2c482.391%2c221.407C458.41%2c257.658%2c444.422%2c304.069%2c465.774%2c341.928C487.397%2c380.267%2c534.535%2c394.618%2c578.457%2c391.739' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1216.7852198036774 8.563624372107402L1158.5564247508871 24.165982982739926 1232.38757841431 66.79241942489774z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1052.558%2c225.096C1075.726%2c225.668%2c1101.432%2c221.543%2c1112.957%2c201.437C1124.442%2c181.401%2c1115.85%2c156.601%2c1102.704%2c137.614C1091.449%2c121.358%2c1072.329%2c113.988%2c1052.558%2c114.198C1033.205%2c114.403%2c1014.85%2c122.484%2c1004.222%2c138.659C992.384%2c156.675%2c986.591%2c179.763%2c997.112%2c198.578C1007.829%2c217.743%2c1030.607%2c224.554%2c1052.558%2c225.096' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M936.87 216.25 a70.15 70.15 0 1 0 140.3 0 a70.15 70.15 0 1 0 -140.3 0z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1518.1164855893862 225.45045154688987L1435.9911440626984 167.94566833185613 1460.6117023743525 307.57579307357776z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1704.4130099008942 134.33311376043537L1680.2295134048027 88.85057187562586 1624.097448825634 147.86708756216785z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M820.1983470274103 152.2914223448127L865.0308988383412 233.1714868024124 945.9109632959409 188.33893499148152 901.07841148501 107.45887053388182z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M262.09695448780093 17.727438680231682L260.31665884938997 119.720507496205 364.0900233037743 19.50773431864266z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M63.58384414714765-22.050679246917007L-11.599476448167216-28.628367485242187-18.177164686492397 46.55495311007268 57.00615590882247 53.13264134839786z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1020.5097124957331 321.902526538718L1053.3880694402344 264.9555418414567 996.4410847429731 232.07718489695537 963.5627277984718 289.0241695942167z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1614.114%2c504.346C1649.776%2c505.59%2c1685.018%2c490.226%2c1703.447%2c459.669C1722.451%2c428.159%2c1722.264%2c388.131%2c1703.175%2c356.673C1684.746%2c326.302%2c1649.636%2c312.007%2c1614.114%2c312.45C1579.427%2c312.883%2c1545.769%2c328.58%2c1528.819%2c358.847C1512.211%2c388.504%2c1517.775%2c424.465%2c1534.965%2c453.789C1551.934%2c482.736%2c1580.58%2c503.176%2c1614.114%2c504.346' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M352.197%2c329.323C365.567%2c329.11%2c377.288%2c320.943%2c383.793%2c309.26C390.118%2c297.9%2c390.171%2c284.107%2c383.634%2c272.868C377.133%2c261.691%2c365.122%2c254.574%2c352.197%2c254.934C339.831%2c255.278%2c330.043%2c263.945%2c323.654%2c274.538C316.996%2c285.577%2c312.852%2c298.862%2c318.808%2c310.294C325.152%2c322.47%2c338.469%2c329.542%2c352.197%2c329.323' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M980.58 7.01 a75.29 75.29 0 1 0 150.58 0 a75.29 75.29 0 1 0 -150.58 0z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1031.0062295989458 255.0444984772009L971.1029863858706 296.9892009382058 1063.9716616839155 365.8717145273161z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1029.197%2c294.38C1061.505%2c294.995%2c1094.454%2c286.474%2c1112.804%2c259.875C1133.839%2c229.385%2c1143.792%2c188.185%2c1124.104%2c156.809C1105.193%2c126.671%2c1064.751%2c125.282%2c1029.197%2c126.633C996.702%2c127.868%2c962.77%2c135.71%2c946.013%2c163.578C928.828%2c192.157%2c933.035%2c228.652%2c950.93%2c256.792C967.576%2c282.967%2c998.183%2c293.789%2c1029.197%2c294.38' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M668.9925535948329 73.2962066547849L711.8943899005699 75.54459662273312 693.8160566996238 10.067647180153557z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1666.570788173564 65.28883239481775L1685.447473538478 162.40095989709363 1782.559601040754 143.52427453217973 1763.68291567584 46.41214702990384z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M578.7721774295452 340.3891688613156L648.2493802220046 312.3185568354944 620.1787681961833 242.84135404303498 550.701565403724 270.9119660688562z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask3710'%3e%3crect width='1920' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='980.61' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient3711'%3e%3cstop stop-color='rgba(97%2c 39%2c 124%2c 1)' offset='0.17'%3e%3c/stop%3e%3cstop stop-color='rgba(24%2c 11%2c 21%2c 1)' offset='0.78'%3e%3c/stop%3e%3cstop stop-color='rgba(3%2c 3%2c 4%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+        }
+      }
+    }
+
+
+
+
+
+.resultados{
+  width: 100%;
+  height: 200px;
+  font-family: "Square Peg", cursive !important;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2vw;
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  gap: 200px;
+
+}
+
+.resultados .resultados1{
+
+  width: 20%;
+}
+.resultados .resultados1 table{
+ 
+  width: 100%;
+  border: 1px solid black;
+}
+
+.resultados .resultados1 table th{ 
+  border: 1px solid black;
+}
+
+.green{ 
+  background-color: rgb(165, 230, 149);
+}
+
+.yellow{ 
+  background-color: rgb(214, 241, 131);
+}
+
+.resultados .resultados1 table td{
+
+  border: 1px solid black;
+}
+
+
+.pagina{
+    display: flex;
+    flex-flow: column wrap;
+  
+}
+.pagina h1 h2{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 3vw;
+}
+
+
+
+.pagina .resultados .resultados1 h3{
+    position: absolute;
+    top: 0;
+}
+.pagina .resultados .resultados1 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-size:1.5rem;
+   
+}
+
+.pagina .resultados .resultados1 .descuento{
+
+align-items: center;
+width: 100px;
+height: 50px;
+}
+
+.formulario {
+
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin: 2%;
+  font-size: 1.5rem;
+
+}
+    .click {
+    
+        background-color: rgb(57, 57, 141);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: .4s;
+      }
+
+    
+      
+
+      .click:hover {
+        background-color: rgb(157, 47, 47);
+        
+      }
+
+      // .rojo{
+
+      //   margin-left: 1%;
+      //   p{
+      //     color: aliceblue;
+      //     @include letraP;
+      //     background-color: rgba(8, 8, 8, 0.423);
+      //   }
+
+      //   img{
+      //     width: 20%;
+          
+
+      //   }
+
+      // }
+
+      .tituloBaseDatos{
+
+display: flex;
+text-align: center;
+justify-content: space-evenly;
+background-color: rgba(73, 73, 4, 0.391);
+.celda{
+  background-color: rgba(130, 122, 28, 0.412);
+  width: 25vh;
+}
+p{
+  color: aliceblue;
+
+}
+      }
+
+        
+      .contenedorBaseDatos{
+        display: block;
+        width: 100%;
+        background-color: rgba(16, 16, 16, 0.614);
+        margin-bottom: 5%;  
+       
+        .verde{
+         
+          .fila{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content:space-evenly;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            background-color: rgba(8, 8, 8, 0.423);
+       
+              
+              h4{
+                color: aliceblue;
+                @include letrah4;
+  
+         
+                
+              }
+              img{
+                width: 20%;
+                    
+              }
+              .celda1{
+                width: 25vh;
+        
+                  }
+              .celda{
+            width: 25vh;
+            border-left: solid 1px white;
+            border-bottom: solid 1px white;
+                }
+              }
+            }
+
+            .rojo{
+              .fila{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content:space-evenly;
+                align-items: center;  
+                width: 100%;
+                background-color: rgba(8, 8, 8, 0.423);
+             
+          
+                  
+                  h4{
+                    color: aliceblue;
+                    @include letrah4;
+             
+                    
+                  }
+                  img{
+                    width: 20%;
+                 
+                  }
+    
+                  .celda1{
+                    width: 25vh;
+            
+                      }
+                  .celda{
+                width: 25vh;
+                border-left: solid 1px white;
+                border-bottom: solid 1px white;
+                  }
+                
+    
+                  }
+                }
+
+      }
+
+
+  
+       
+  
+      .containerDatos{
+    
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: space-around;
+          
+  
+      }
+
+      .containerDatos .containerDatosChild{
+        display: flex;
+        background-color: rgb(212, 253, 253);
+        font-size: 1.5rem;
+        font-family: "Nunito Sans", sans-serif;
+        border:1px solid black;
+        width: 19%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+     
+      
+     
+      }
+
+
+
+      .btnBoot{
+        display: flex;
+        gap: 1%;
+        font-size: 2rem;
+        
+      }
+
+      
+      .btn{
+         font-size: 1.5rem;
+        
+      }
+
+
+      .resultados2{
+        h3{
+          color: aliceblue;
+          font-family:$letra_H3 ;
+        }
+        p{
+          color: aliceblue;
+          font-family: $letra_P;
+        }
+      }
+
+      .letraTitleCard{
+
+        @include letrah2
+      }
+
+      
