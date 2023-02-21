@@ -2,6 +2,8 @@
 @mixin letrah1(){
     font-family: $letra_H1;
     font-size: $altura_5;
+    color: aliceblue;
+    text-shadow: 2px 3px 3px black;
     text-align: center;
 }
 @mixin letrah2(){

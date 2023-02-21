@@ -10,7 +10,13 @@
 @import "utilidades/variables";
 @import "utilidades/mixin";
 
+.mainIndex h1{
+  @include letrah1;
+}
 
+.principal{
+  margin-top: 5%;
+}
 .registroPagina{
   background-image: url("../img/fondo_registro.jpg") ;
   background-size : cover;
@@ -156,23 +162,6 @@ height: 50px;
         background-color: rgb(157, 47, 47);
         
       }
-
-      // .rojo{
-
-      //   margin-left: 1%;
-      //   p{
-      //     color: aliceblue;
-      //     @include letraP;
-      //     background-color: rgba(8, 8, 8, 0.423);
-      //   }
-
-      //   img{
-      //     width: 20%;
-          
-
-      //   }
-
-      // }
 
       .tituloBaseDatos{
 

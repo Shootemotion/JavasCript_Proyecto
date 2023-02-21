@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+.mainIndex h1 {
+  font-family: "Comfortaa", cursive;
+  font-size: 3rem;
+  color: aliceblue;
+  text-shadow: 2px 3px 3px black;
+  text-align: center;
+}
+
+.principal {
+  margin-top: 5%;
+}
+
 .registroPagina {
   background-image: url("../img/fondo_registro.jpg");
   background-size: cover;
