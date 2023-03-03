@@ -1,31 +1,145 @@
 /*reset*/
 * {
-    margin: 3px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box; 
     }
   
-
 //Importa archivos secundarios
 @import "utilidades/variables";
 @import "utilidades/mixin";
-
+h1{
+  color: white;
+  text-align: center;
+}
 .mainIndex h1{
   @include letrah1;
 }
 
-.principal{
-  margin-top: 5%;
+
+.cab{
+  
+ .navbar{
+background: linear-gradient(90deg, rgba(36,31,31,1) 0%, rgba(38,38,38,1) 26%, rgba(38,38,38,1) 61%, rgb(51, 13, 1) 100%);
+box-shadow: -1px 1px 15px 1px rgb(0, 0, 0);
+width: 100%;
+a{
+  @include letraP;
 }
+}
+}
+
+.principal{
+  background-image: url("/img/fondo_registro.jpg") ;
+  margin-top: 2;
+  .bienvenidos{
+padding: 2%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    h1{
+      @include letrah1;
+    }
+    .intro{
+   
+      width: 50%;
+    }
+    p{
+      @include letraP;
+      font-size: 1.2rem;
+      color: rgb(255, 255, 255);
+      text-shadow: 2px 5px 4px black;
+    }
+
+    h3{
+      @include letrah3
+    }
+    .flecha{
+      display: grid;
+      place-items: center;
+  
+    img{
+      margin-top: 2%;
+      transform: rotate(-90deg);
+      filter: invert(10%);
+      width: 10%;
+    }
+  }
+  }
+
+  #parpadeo {
+    animation: parpadeo 2s infinite;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  @keyframes parpadeo {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .contenedorDolarSubtitulo{
+   display: flex;
+   flex-flow: column;
+   margin-top: 4%;
+   margin-bottom: 4%;
+   .subtitleDolar{
+    display: grid;
+    place-items: center;
+    color: white;
+    @include letraP	;
+   
+    text-shadow: 2px 5px 4px black;
+   }
+  .contenedorDolar{
+
+   
+    padding: 0.5%;
+    @include flex(flex, row,wrap, center,space-evenly);
+      .car{
+        width: 12%;
+        box-shadow: -1px 10px 33px 1px rgb(0, 0, 0);
+      
+        .nameMoneda{
+          text-align: center;
+          background: linear-gradient(90deg, rgba(35, 34, 32, 0.886) 0%, rgb(83, 81, 78) 53%, rgba(74, 72, 72, 0.824) 100%);
+          @include letrah4;
+          color: rgb(245, 245, 238);
+          height: 3rem;
+          text-shadow: 2px 5px 4px black;
+          
+        }
+        .precioMoneda{
+          text-align: center;
+          @include letraP;
+          color: white;
+          background: linear-gradient(90deg, rgba(35, 34, 32, 0.886) 0%, rgb(83, 81, 78) 53%, rgba(74, 72, 72, 0.824) 100%);
+          text-shadow: 2px 5px 4px black;
+          
+       
+         
+        }
+      }
+
+    }
+  }
+  }
+
+
 .registroPagina{
-  background-image: url("../img/fondo_registro.jpg") ;
+  //
   background-size : cover;
   background-repeat: no-repeat;
 
-  h2{
-    color: aliceblue;
-    font-family: $letra_H2;
-  }
+
 }
 
 .mainIndex{
@@ -44,22 +158,22 @@ height:  1080px;
 background-image: url("/img/17010-4k.jpg") ;
 background-size : cover;
 background-repeat: no-repeat;
-    .cab{
-      
-        .title{
-        font-family: "Square Peg", cursive !important;
-        display: flex;
-        text-align: center;
-        color: white;  
-        justify-content: center;
-        align-items: center;
-        height: 10rem;
-        // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='400' preserveAspectRatio='none' viewBox='0 0 1920 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask3710%26quot%3b)' fill='none'%3e%3crect width='1920' height='400' x='0' y='0' fill='url(%23SvgjsRadialGradient3711)'%3e%3c/rect%3e%3cpath d='M1768.56%2c353.56C1811.53%2c352.906%2c1852.044%2c328.644%2c1870.616%2c289.889C1887.267%2c255.143%2c1868.574%2c217.709%2c1849.781%2c184.073C1830.297%2c149.199%2c1808.379%2c110.431%2c1768.56%2c107.225C1724.415%2c103.671%2c1683.2%2c130.546%2c1661.013%2c168.875C1638.782%2c207.28%2c1638.645%2c254.734%2c1660.975%2c293.081C1683.163%2c331.184%2c1724.472%2c354.231%2c1768.56%2c353.56' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M673.772%2c88.235C698.912%2c88.237%2c727.58%2c89.397%2c741.26%2c68.305C755.743%2c45.975%2c749.077%2c16.571%2c734.835%2c-5.913C721.627%2c-26.766%2c698.41%2c-39.753%2c673.772%2c-38.241C651.325%2c-36.863%2c636.476%2c-18.137%2c624.444%2c0.862C611.096%2c21.939%2c594.039%2c46.57%2c606.304%2c68.295C618.661%2c90.183%2c648.637%2c88.233%2c673.772%2c88.235' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M578.457%2c391.739C617.551%2c389.176%2c648.358%2c362.466%2c668.16%2c328.661C688.228%2c294.401%2c699.819%2c252.65%2c680.128%2c218.171C660.313%2c183.475%2c618.407%2c170.935%2c578.457%2c171.589C539.8%2c172.222%2c503.722%2c189.162%2c482.391%2c221.407C458.41%2c257.658%2c444.422%2c304.069%2c465.774%2c341.928C487.397%2c380.267%2c534.535%2c394.618%2c578.457%2c391.739' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1216.7852198036774 8.563624372107402L1158.5564247508871 24.165982982739926 1232.38757841431 66.79241942489774z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1052.558%2c225.096C1075.726%2c225.668%2c1101.432%2c221.543%2c1112.957%2c201.437C1124.442%2c181.401%2c1115.85%2c156.601%2c1102.704%2c137.614C1091.449%2c121.358%2c1072.329%2c113.988%2c1052.558%2c114.198C1033.205%2c114.403%2c1014.85%2c122.484%2c1004.222%2c138.659C992.384%2c156.675%2c986.591%2c179.763%2c997.112%2c198.578C1007.829%2c217.743%2c1030.607%2c224.554%2c1052.558%2c225.096' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M936.87 216.25 a70.15 70.15 0 1 0 140.3 0 a70.15 70.15 0 1 0 -140.3 0z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1518.1164855893862 225.45045154688987L1435.9911440626984 167.94566833185613 1460.6117023743525 307.57579307357776z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1704.4130099008942 134.33311376043537L1680.2295134048027 88.85057187562586 1624.097448825634 147.86708756216785z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M820.1983470274103 152.2914223448127L865.0308988383412 233.1714868024124 945.9109632959409 188.33893499148152 901.07841148501 107.45887053388182z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M262.09695448780093 17.727438680231682L260.31665884938997 119.720507496205 364.0900233037743 19.50773431864266z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M63.58384414714765-22.050679246917007L-11.599476448167216-28.628367485242187-18.177164686492397 46.55495311007268 57.00615590882247 53.13264134839786z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1020.5097124957331 321.902526538718L1053.3880694402344 264.9555418414567 996.4410847429731 232.07718489695537 963.5627277984718 289.0241695942167z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1614.114%2c504.346C1649.776%2c505.59%2c1685.018%2c490.226%2c1703.447%2c459.669C1722.451%2c428.159%2c1722.264%2c388.131%2c1703.175%2c356.673C1684.746%2c326.302%2c1649.636%2c312.007%2c1614.114%2c312.45C1579.427%2c312.883%2c1545.769%2c328.58%2c1528.819%2c358.847C1512.211%2c388.504%2c1517.775%2c424.465%2c1534.965%2c453.789C1551.934%2c482.736%2c1580.58%2c503.176%2c1614.114%2c504.346' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M352.197%2c329.323C365.567%2c329.11%2c377.288%2c320.943%2c383.793%2c309.26C390.118%2c297.9%2c390.171%2c284.107%2c383.634%2c272.868C377.133%2c261.691%2c365.122%2c254.574%2c352.197%2c254.934C339.831%2c255.278%2c330.043%2c263.945%2c323.654%2c274.538C316.996%2c285.577%2c312.852%2c298.862%2c318.808%2c310.294C325.152%2c322.47%2c338.469%2c329.542%2c352.197%2c329.323' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M980.58 7.01 a75.29 75.29 0 1 0 150.58 0 a75.29 75.29 0 1 0 -150.58 0z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1031.0062295989458 255.0444984772009L971.1029863858706 296.9892009382058 1063.9716616839155 365.8717145273161z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1029.197%2c294.38C1061.505%2c294.995%2c1094.454%2c286.474%2c1112.804%2c259.875C1133.839%2c229.385%2c1143.792%2c188.185%2c1124.104%2c156.809C1105.193%2c126.671%2c1064.751%2c125.282%2c1029.197%2c126.633C996.702%2c127.868%2c962.77%2c135.71%2c946.013%2c163.578C928.828%2c192.157%2c933.035%2c228.652%2c950.93%2c256.792C967.576%2c282.967%2c998.183%2c293.789%2c1029.197%2c294.38' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M668.9925535948329 73.2962066547849L711.8943899005699 75.54459662273312 693.8160566996238 10.067647180153557z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1666.570788173564 65.28883239481775L1685.447473538478 162.40095989709363 1782.559601040754 143.52427453217973 1763.68291567584 46.41214702990384z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M578.7721774295452 340.3891688613156L648.2493802220046 312.3185568354944 620.1787681961833 242.84135404303498 550.701565403724 270.9119660688562z' fill='rgba(24%2c 2%2c 26%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask3710'%3e%3crect width='1920' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='980.61' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient3711'%3e%3cstop stop-color='rgba(97%2c 39%2c 124%2c 1)' offset='0.17'%3e%3c/stop%3e%3cstop stop-color='rgba(24%2c 11%2c 21%2c 1)' offset='0.78'%3e%3c/stop%3e%3cstop stop-color='rgba(3%2c 3%2c 4%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-        }
-      }
-    }
+    
+}
 
+.titleModal{
+  @include letrah3;
+  color: rgba(0, 0, 0, 0.87);
+text-align: center
+}
+.tablaNombre{
+  @include letrah4;
+  color: rgba(0, 0, 0, 0.87);
+}
 
+.modal{
+  text-align: center;
+}
 
 
 
@@ -163,44 +277,116 @@ height: 50px;
         
       }
 
-      .tituloBaseDatos{
 
-display: flex;
-text-align: center;
-justify-content: space-evenly;
-background-color: rgba(73, 73, 4, 0.391);
-.celda{
-  background-color: rgba(130, 122, 28, 0.412);
-  width: 25vh;
-}
-p{
-  color: aliceblue;
+      .cuerpoDatos{
+        display: flex;
+        flex-flow: column wrap;
+        background-color: rgb(37, 37, 37);
+        .cardsTotales{
+          display: grid;
+          place-items: center;
+          margin: 2%;
+          margin-bottom:5%;
+          .card-img-top{
+            height: 9rem;
+          }
+         .card-body{
+          text-align: center;
+          background-image: radial-gradient(circle at 50% 120.71%, #ffff88 0, #ffe678 16.67%, #d3c469 33.33%, #a39f58 50%, #787a48 66.67%, #555a39 83.33%, #393e2b 100%);
+          color: rgb(29, 26, 26);
+          text-shadow: 2px 2px 6px black;
+          }
+        }
+        .tituloBaseDatos{
+          margin-top: 1%;
+          @include flex(flex, row,nowrap, center,space-evenly);
+          background-color: rgba(73, 17, 4, 0.123);
 
-}
+          .celda1{
+            background-color: rgba(130, 122, 28, 0);
+            width: 20vh;
+            }
+          .celda{
+          background-color: rgba(130, 122, 28, 0.412);
+          width: 25vh;
+          }
+          p{
+            margin-top: 4%;
+          color: aliceblue;
+          @include letrah2;
+          font-size: 1.2rem;
+          text-align: center;
+    
+          }
+        }
+
+        .cabeceraDatos{
+          @include flex(flex, row,nowrap, end,space-between);
+          position: relative;
+          margin-top: 1%;
+          height: 7vh;
+          .cabeceraDatosBtn{
+            display: flex;
+            
+            gap: 51px;
+            position: absolute;
+            right: 5%
+          }
+          .nombreTablaSeleccionada{
+        position: absolute;
+        left: 40%;
+        @include letrah2;
+        text-shadow: 2px 5px 4px black;
+          }
+
+        }
       }
+  
 
+  
+
+
+      .botonera{
+        @include flex(flex, row,wrap, center,space-around);
+       margin-top: 2%;
+       background: linear-gradient(90deg, rgba(36, 31, 31, 0.938) 0%, rgba(38, 38, 38, 0.904) 60%, rgba(38, 38, 38, 0.931) 61%, rgba(51, 13, 1, 0.84) 100%);
+       box-shadow: -1px 1px 15px 1px rgb(0, 0, 0);
+       padding: 2%;
+
+
+       h2{color: white;}
+       position: sticky;
+       top: 6%;
+       z-index: 999;
+       
+       @include letrah1;
+      
+       button{
+        @include letraP;
+       }
+      }
         
       .contenedorBaseDatos{
         display: block;
         width: 100%;
         background-color: rgba(16, 16, 16, 0.614);
-        margin-bottom: 5%;  
+        margin-bottom: 1;  
        
+    
         .verde{
          
           .fila{
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content:space-evenly;
-            align-items: center;
+            @include flex(flex, row,nowrap, center,space-evenly);
             text-align: center;
             width: 100%;
             background-color: rgba(8, 8, 8, 0.423);
        
               
+
               h4{
+                margin-top: 2%;
                 color: aliceblue;
-                @include letrah4;
+                @include letraP;
   
          
                 
@@ -210,7 +396,7 @@ p{
                     
               }
               .celda1{
-                width: 25vh;
+                width: 20vh;
         
                   }
               .celda{
@@ -223,18 +409,16 @@ p{
 
             .rojo{
               .fila{
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content:space-evenly;
-                align-items: center;  
+                @include flex(flex, row,nowrap, center,space-evenly); 
                 width: 100%;
                 background-color: rgba(8, 8, 8, 0.423);
              
           
                   
                   h4{
+                    margin-top: 2%;
                     color: aliceblue;
-                    @include letrah4;
+                    @include letraP;
              
                     
                   }
@@ -244,13 +428,15 @@ p{
                   }
     
                   .celda1{
-                    width: 25vh;
+                    width: 20vh;
             
                       }
                   .celda{
                 width: 25vh;
                 border-left: solid 1px white;
                 border-bottom: solid 1px white;
+          
+ 
                   }
                 
     
@@ -320,4 +506,112 @@ p{
         @include letrah2
       }
 
-      
+
+  
+
+      @keyframes move {
+        100% {
+            transform: translate3d(0, 0, 1px) rotate(360deg);
+        }
+    }
+    
+ 
+    
+    .hover {
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+    
+    .hover:hover {
+      transform: translate(5px, -10px); /* Desplaza el div hacia arriba y hacia la derecha */
+      box-shadow: -20px 10px 33px 1px rgb(0 0 0 / 70%)
+    }
+
+    footer{
+      background-color: rgb(20, 20, 20);
+      color: white;
+      display: flex;
+      height: 6vh;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      padding: 2%;
+      .fecha{
+        color: wheat;
+  p{
+    color: aliceblue
+  }
+      }
+     p{
+      @include letraP;
+     }
+     .redesSociales{
+      display: flex;
+      gap: 	20%;
+     }
+      img{
+        width: 50px;
+      }
+
+    }
+
+  /* Estilos para la calculadora */
+  #calculator-container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  #calculator-container input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: right;
+  }
+
+  #calculator-container button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 24px;
+  }
+
+  #calculator-container button:active {
+    box-shadow: inset 0px 0px 5px #ccc;
+  }
+
+  #calculator-container button.operator {
+    background-color: #fd9226;
+    color: white;
+  }
+
+  #calculator-container button.operator:active {
+    background-color: #e68a1f;
+  }
+
+  #calculator-container button.clear {
+    background-color: #f7a3a3;
+    color: white;
+  }
+
+  #calculator-container button.clear:active {
+    background-color: #e99696;
+  }
+
+  #calculator-container button.equal {
+    background-color: #21b81e;
+    color: white;
+  }
+
+  #calculator-container button.equal:active {
+    background-color: #1d9e1b;
+  }

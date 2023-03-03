@@ -1,8 +1,13 @@
 /*reset*/
 * {
-  margin: 3px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1 {
+  color: white;
+  text-align: center;
 }
 
 .mainIndex h1 {
@@ -13,18 +18,126 @@
   text-align: center;
 }
 
+.cab .navbar {
+  background: linear-gradient(90deg, rgb(36, 31, 31) 0%, rgb(38, 38, 38) 26%, rgb(38, 38, 38) 61%, rgb(51, 13, 1) 100%);
+  box-shadow: -1px 1px 15px 1px rgb(0, 0, 0);
+  width: 100%;
+}
+.cab .navbar a {
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  text-align: center;
+}
+
 .principal {
-  margin-top: 5%;
+  background-image: url("/img/fondo_registro.jpg");
+  margin-top: 2;
+}
+.principal .bienvenidos {
+  padding: 2%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.principal .bienvenidos h1 {
+  font-family: "Comfortaa", cursive;
+  font-size: 3rem;
+  color: aliceblue;
+  text-shadow: 2px 3px 3px black;
+  text-align: center;
+}
+.principal .bienvenidos .intro {
+  width: 50%;
+}
+.principal .bienvenidos p {
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 5px 4px black;
+}
+.principal .bienvenidos h3 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+.principal .bienvenidos .flecha {
+  display: grid;
+  place-items: center;
+}
+.principal .bienvenidos .flecha img {
+  margin-top: 2%;
+  transform: rotate(-90deg);
+  filter: invert(10%);
+  width: 10%;
+}
+.principal #parpadeo {
+  animation: parpadeo 2s infinite;
+  transition: opacity 0.5s ease-in-out;
+}
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.principal .contenedorDolarSubtitulo {
+  display: flex;
+  flex-flow: column;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.principal .contenedorDolarSubtitulo .subtitleDolar {
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  text-align: center;
+  text-shadow: 2px 5px 4px black;
+}
+.principal .contenedorDolarSubtitulo .contenedorDolar {
+  padding: 0.5%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.principal .contenedorDolarSubtitulo .contenedorDolar .car {
+  width: 12%;
+  box-shadow: -1px 10px 33px 1px rgb(0, 0, 0);
+}
+.principal .contenedorDolarSubtitulo .contenedorDolar .car .nameMoneda {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(35, 34, 32, 0.886) 0%, rgb(83, 81, 78) 53%, rgba(74, 72, 72, 0.824) 100%);
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(245, 245, 238);
+  height: 3rem;
+  text-shadow: 2px 5px 4px black;
+}
+.principal .contenedorDolarSubtitulo .contenedorDolar .car .precioMoneda {
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  background: linear-gradient(90deg, rgba(35, 34, 32, 0.886) 0%, rgb(83, 81, 78) 53%, rgba(74, 72, 72, 0.824) 100%);
+  text-shadow: 2px 5px 4px black;
 }
 
 .registroPagina {
-  background-image: url("../img/fondo_registro.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
-.registroPagina h2 {
-  color: aliceblue;
-  font-family: "Shadows Into Light", cursive;
 }
 
 .mainIndex {
@@ -45,14 +158,24 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.indexPagina .cab .title {
-  font-family: "Square Peg", cursive !important;
-  display: flex;
+
+.titleModal {
+  font-family: "Varela Round", sans-serif;
+  font-size: 2rem;
   text-align: center;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  height: 10rem;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
+}
+
+.tablaNombre {
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.modal {
+  text-align: center;
 }
 
 .resultados {
@@ -142,46 +265,129 @@
   background-color: rgb(157, 47, 47);
 }
 
-.tituloBaseDatos {
+.cuerpoDatos {
   display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-  background-color: rgba(73, 73, 4, 0.391);
+  flex-flow: column wrap;
+  background-color: rgb(37, 37, 37);
 }
-.tituloBaseDatos .celda {
+.cuerpoDatos .cardsTotales {
+  display: grid;
+  place-items: center;
+  margin: 2%;
+  margin-bottom: 5%;
+}
+.cuerpoDatos .cardsTotales .card-img-top {
+  height: 9rem;
+}
+.cuerpoDatos .cardsTotales .card-body {
+  text-align: center;
+  background-image: radial-gradient(circle at 50% 120.71%, #ffff88 0, #ffe678 16.67%, #d3c469 33.33%, #a39f58 50%, #787a48 66.67%, #555a39 83.33%, #393e2b 100%);
+  color: rgb(29, 26, 26);
+  text-shadow: 2px 2px 6px black;
+}
+.cuerpoDatos .tituloBaseDatos {
+  margin-top: 1%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  background-color: rgba(73, 17, 4, 0.123);
+}
+.cuerpoDatos .tituloBaseDatos .celda1 {
+  background-color: rgba(130, 122, 28, 0);
+  width: 20vh;
+}
+.cuerpoDatos .tituloBaseDatos .celda {
   background-color: rgba(130, 122, 28, 0.412);
   width: 25vh;
 }
-.tituloBaseDatos p {
+.cuerpoDatos .tituloBaseDatos p {
+  margin-top: 4%;
   color: aliceblue;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.cuerpoDatos .cabeceraDatos {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: end;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 1%;
+  height: 7vh;
+}
+.cuerpoDatos .cabeceraDatos .cabeceraDatosBtn {
+  display: flex;
+  gap: 51px;
+  position: absolute;
+  right: 5%;
+}
+.cuerpoDatos .cabeceraDatos .nombreTablaSeleccionada {
+  position: absolute;
+  left: 40%;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 2px 5px 4px black;
+}
+
+.botonera {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: space-around;
+  margin-top: 2%;
+  background: linear-gradient(90deg, rgba(36, 31, 31, 0.938) 0%, rgba(38, 38, 38, 0.904) 60%, rgba(38, 38, 38, 0.931) 61%, rgba(51, 13, 1, 0.84) 100%);
+  box-shadow: -1px 1px 15px 1px rgb(0, 0, 0);
+  padding: 2%;
+  position: sticky;
+  top: 6%;
+  z-index: 999;
+  font-family: "Comfortaa", cursive;
+  font-size: 3rem;
+  color: aliceblue;
+  text-shadow: 2px 3px 3px black;
+  text-align: center;
+}
+.botonera h2 {
+  color: white;
+}
+.botonera button {
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .contenedorBaseDatos {
   display: block;
   width: 100%;
   background-color: rgba(16, 16, 16, 0.614);
-  margin-bottom: 5%;
+  margin-bottom: 1;
 }
 .contenedorBaseDatos .verde .fila {
   display: flex;
   flex-flow: row nowrap;
+  align-content: center;
   justify-content: space-evenly;
-  align-items: center;
   text-align: center;
   width: 100%;
   background-color: rgba(8, 8, 8, 0.423);
 }
 .contenedorBaseDatos .verde .fila h4 {
+  margin-top: 2%;
   color: aliceblue;
-  font-family: "Caveat", cursive;
-  font-size: 1.5rem;
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
   text-align: center;
 }
 .contenedorBaseDatos .verde .fila img {
   width: 20%;
 }
 .contenedorBaseDatos .verde .fila .celda1 {
-  width: 25vh;
+  width: 20vh;
 }
 .contenedorBaseDatos .verde .fila .celda {
   width: 25vh;
@@ -191,22 +397,23 @@
 .contenedorBaseDatos .rojo .fila {
   display: flex;
   flex-flow: row nowrap;
+  align-content: center;
   justify-content: space-evenly;
-  align-items: center;
   width: 100%;
   background-color: rgba(8, 8, 8, 0.423);
 }
 .contenedorBaseDatos .rojo .fila h4 {
+  margin-top: 2%;
   color: aliceblue;
-  font-family: "Caveat", cursive;
-  font-size: 1.5rem;
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
   text-align: center;
 }
 .contenedorBaseDatos .rojo .fila img {
   width: 20%;
 }
 .contenedorBaseDatos .rojo .fila .celda1 {
-  width: 25vh;
+  width: 20vh;
 }
 .contenedorBaseDatos .rojo .fila .celda {
   width: 25vh;
@@ -256,4 +463,109 @@
   font-family: "Shadows Into Light", cursive;
   font-size: 2.5rem;
   text-align: center;
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+.hover {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.hover:hover {
+  transform: translate(5px, -10px); /* Desplaza el div hacia arriba y hacia la derecha */
+  box-shadow: -20px 10px 33px 1px rgba(0, 0, 0, 0.7);
+}
+
+footer {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  display: flex;
+  height: 6vh;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 2%;
+}
+footer .fecha {
+  color: wheat;
+}
+footer .fecha p {
+  color: aliceblue;
+}
+footer p {
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  text-align: center;
+}
+footer .redesSociales {
+  display: flex;
+  gap: 20%;
+}
+footer img {
+  width: 50px;
+}
+
+/* Estilos para la calculadora */
+#calculator-container {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+#calculator-container input[type=text] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  text-align: right;
+}
+
+#calculator-container button {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+#calculator-container button:active {
+  box-shadow: inset 0px 0px 5px #ccc;
+}
+
+#calculator-container button.operator {
+  background-color: #fd9226;
+  color: white;
+}
+
+#calculator-container button.operator:active {
+  background-color: #e68a1f;
+}
+
+#calculator-container button.clear {
+  background-color: #f7a3a3;
+  color: white;
+}
+
+#calculator-container button.clear:active {
+  background-color: #e99696;
+}
+
+#calculator-container button.equal {
+  background-color: #21b81e;
+  color: white;
+}
+
+#calculator-container button.equal:active {
+  background-color: #1d9e1b;
 }/*# sourceMappingURL=styles.css.map */

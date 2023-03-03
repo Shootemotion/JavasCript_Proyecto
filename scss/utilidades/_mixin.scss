@@ -28,3 +28,11 @@
     font-size: $altura_1;
     text-align: center;
 }
+
+
+@mixin flex($flex,$row,$wrap, $align,$justify){
+    display: $flex;
+    flex-flow: $row $wrap;
+    align-content: $align;
+    justify-content: $justify;
+}

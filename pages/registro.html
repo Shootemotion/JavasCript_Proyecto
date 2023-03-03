@@ -4,377 +4,489 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--Animate CSS-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
+    <!-- CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- JavaScript de jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- JavaScript de Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
      <!--TIPOGRAFIA-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Comfortaa:wght@500&family=Dancing+Script:wght@700&family=Indie+Flower&family=Josefin+Sans:wght@200;600&family=Lilita+One&family=Nunito+Sans:wght@400;700&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+     <!-- CHARTS -->
+     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <!--Link a Css-->
     <link rel="stylesheet" href="../css/styles.css">
     <title>Registro Historico</title>
 </head>
-<body class="registroPagina">
+<body id="overlay" class="registroPagina">
  
-    <header class="cab sticky-top">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-dark ">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item ">
-                        <a class="nav-link active text-light" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Registro</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input id="buscador" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    </div>
-                </div>
-            </nav>
-        </header>
+<header class="cab sticky-top">
 
-    <main >
-      <div class="principal">
-
-        <!-- FORMULARIO CARGA DE DATOS -->
-        <div class="row d-flex justify-content-around text-center  mb-5">
-            <div class="col-5">
-                    <form class="row g-3 needs-validation"  id="formCarga" novalidate>
-                        <h2>CARGA DE DATOS</h2>
-
-                        <div class="col-md-4">
-                            <label for="creador" class="form-label text-light">Usuario</label>
-                            <div class="input-group has-validation">
-                                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                <input type="text" class="form-control" id="creadorAdd"  placeholder="@Username" aria-describedby="inputGroupPrepend" required>
-                                <div class="invalid-feedback">
-                                Please choose a username.
-                                </div>
-                            </div>
-                            </div>
-
-                        <div class="col-md-4">
-                        <label for="validationCustom01" class="form-label text-light">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Nombre"  id="validationCustom01" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="fecha" class="form-label text-light">Fecha:</label>
-                            <input type="date" class="form-control" id="fechaAdd" name="fecha">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label for="tipoMovimiento" class="form-label text-light">Entrada</label>
-                            <select class="form-select" id="tipoMovimientoAdd" onchange="listaDependiente()" name="tipoMovimiento">
-                            <option selected disabled value="">Select</option>
-                            <option value="ingreso">Ingreso</option>
-                            <option value="gasto">Gasto</option>
-                            </select>
-                            <div class="invalid-feedback">
-                            Please select a valid state.
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                        <label for="tipoAdd" class="form-label text-light">SubCategoria</label>
-                        <select class="form-select" id="tipoAdd" required>
-                            <option selected disabled value="">Select</option>
-                    
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid state.
-                        </div>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="monto" class="form-label text-light">Monto</label>
-                            <div class="input-group has-validation">
-                            <span class="input-group-text" id="inputGroupPrepend">$</span>
-                            <input type="number" class="form-control" id="montoAdd" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Please choose a username.
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                        <button class="btn btn-primary" type="button"  id="guardarDatos" >Guardar</button>
-                        </div>
-                        <div class="col-6">
-                    </div>
-                    </form>
-                </div>
-                <div class="col-6">
-                    <button id="agregarLibro" data-bs-toggle="modal" data-bs-target="#idModalAgregarCategoria" class="btn btn-success">Agregar Categoria</button>
-                </div>
-                <div class="col-6">
-                    <button id="agregarDatos" data-bs-toggle="modal" data-bs-target="#idModalAgregarDatos" class="btn btn-success">Agregar Categoria</button>
-                </div>
-
-          
-
-                <!--TABLA CON RESULTADOS  -->
-        <div class="col-4 ">
-            <h2>RESUMEN</h2>
-            <br><br>
-          <table class="table text-light">
-            <thead class="table-dark text-light">
-                <tr>
-                    <th ></th>
-                    <th >Ingresos</th>
-                    <th>Gastos</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Q Mov.</th>
-                    <td class="green" id="qIngreso"></td>
-                    <td class="yellow" id="qGasto"></td>
-                    </tr>
-                    <tr>
-                    <th>Total</th>
-                    <td class="green" id="totalIngreso"></td>
-                    <td class="yellow" id="totalGasto"></td>       
-            </tbody>
-            </table>
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-dark ">
+    
+    <div class="container-fluid">
         
-            </div>
-        </div>
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+            <a class="nav-link active text-light" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-light" href="#">Registro</a>
+            </li>
+        </ul>
     
-    
-        <div class="tituloBaseDatos">
-
-            <div  class=" text-center celda">
-              <p></p>
-        </div>
-  
-            <div  class=" text-center celda">
-                <p>TIPO</p>
-            </div>
-
-            <div  class=" text-center celda">
-                <p>SUBTIPO</p>
-            </div>
-
-            <div  class=" text-center celda">
-                <p>FECHA</p>
-            </div>
-
-            <div  class=" celda">
-                <p>CREADOR</p>
-            </div>
-
-            <div  class=" celda">
-                <p>MONTO</p>
-            </div>
-
-        </div>
-
-        <div id="coincidencia"></div>
-            <div id="baseDatos" class="contenedorBaseDatos">
-             
-
-            
-            </div>
-        
-
-            </div>
-    
-
-     <!--CARDS CON DATOS TOTALES  --> 
-     <div class="d-flex justify-content-center align-items-center">       
-        <div class="row g-6" style="width: 50%;">
-           
-            <div class="col">
-                <div class="card h-100">
-                  <img src="../img/Alza.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                      <h4 class="card-title" id="totalIngreso1">Card title</h4>
-                      <p class="card-text">INGRESOS.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
-
-            <div class="col">
-              <div class="card h-100">
-                <img src="../img/Baja.JPG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title" id="totalGasto1">Card title</h4>
-                    <p class="card-text">GASTOS.</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                  <img src="../img/Balance.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h4 class="card-title" id="resultadoBalance">Card title</h4>
-                    <p class="card-text">BALANCE TOTAL</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </div>
-                </div>
-              </div>
+        <form class="d-flex" role="search">
+            <input id="buscador" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         </div>
     </div>
-      
-    <!---------------------------------------------MODAL---------------------------------------->
+    
+</nav>
 
+</header>
+<main >
 
-        <!--MODAL PARA AGREGAR SUBCATEGORIAS-->
-          <div class="modal fade" id="idModalAgregarCategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Agregar Subcategoria</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="modal-body">
-                    <form id="modalForm">
-                        <label for="tipo">Selecciona el tipo:</label>
-                        <select id="tipo">
-                        <option value="">Selecciona una opción</option>
-                        <option value="ingreso">Ingreso</option>
-                        <option value="gasto">Gasto</option>
-                        </select><br><br>
-                        <label for="descripcion">Nueva Subcategoria:</label>
-                        <input type="text" id="descripcion"><br><br>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="text" id="guardarcSubCatBtn" class="btn btn-success" data-bs-dismiss="modal">Guardar </button>
-                </div>
-              </div>
+    <div class="principal background">
+
+        <div class="bienvenidos">
+        <div>
+    <h1 class="animate__animated animate__rubberBand animate__slower ">Bienvenidos </h1>
+        </div>
+
+        <div class="intro">
+        <p>¡Bienvenido(a) a nuestra página de registro contable!
+
+        Estamos encantados de ofrecerte una herramienta eficiente y fácil de usar para almacenar y gestionar tu información financiera de manera segura y confiable.</p><br>
+        <p> Nuestro sistema de registro contable te permitirá llevar un seguimiento detallado de tus transacciones, ingresos y gastos, facilitando la toma de decisiones y el control de tus finanzas.</p>
+        <br><br>
+        <p>Continuemos...</p>
+        </div>
+        <div id="parpadeo" class="flecha">
+
+        <img src="../img/Flecha.png" alt="Flecha hacia abajo">
+        </div>
+        </div>
+
+        <!--BOTONES--> 
+        <div id="destacado" class="botonera">
+            <h2 class="animate__animated animate__backInRight animate__slower"> <b> CREE</b> o <b> ELIJA</b> <br> un Area de trabajo</h2>
+            <div class="">
+                
+                <button id="agregarTabla" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#idModalAgregarTabla" data-bs-whatever="@fat">AGREGAR NUEVA AREA</button>
             </div>
-          </div>
-      
+            
+            
+            <div class="">
+                <button id="verTablas" data-bs-toggle="modal" class="btn btn-primary">SELECCIONAR EXISTENTE</button>
+
+            </div>
+            <div>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#calculatorModal">
+        CALCULADORA
+        </button>
+        </div>
+
+
+        </div>
+
+        <!--CONTENEDOR  -  CARDS CON DATOS DOLAR  -->
+        <div class="contenedorDolarSubtitulo">
+        <div class="subtitleDolar">
+        <h2>Cotizacion del Dolar a la fecha</h2>
+        </div> 
+        <div id="apiDolar" class="contenedorDolar">    
+        </div>
+        </div>
+
+
+        <!--CONTENEDORES CON BASE DE DATOS  --> 
+        <div class="cuerpoDatos">
+        <div class="cabeceraDatos">
+        <div class="cabeceraDatosBtn">
+        <button id="agregarDatos" data-bs-toggle="modal" data-bs-target="#idModalAgregarDatos" class="btn btn-success d-none">AGREGAR DATOS</button>
+        <button id="ideliminarDatos"type="button" class="btn btn-danger d-none" data-bs-toggle="modal" data-bs-target="#eliminarDatos">ELIMINAR DATOS</button>
+
+        </div>
+        <div>
+        <h1 id="nombreTablaSeleccionada" class="animate__flash nombreTablaSeleccionada">  </h1>
+        </div>
+
+        </div>
+
+        <div id="titlebaseDatos" class="tituloBaseDatos">
+        </div>
+
+
+        <div id="coincidencia"></div>
+
+        <div id="baseDatos" class="contenedorBaseDatos">           
+        </div>
+
+
+        <!--CARDS CON DATOS TOTALES  --> 
+        <div id="cardsTotales" class="cardsTotales d-none">       
+        <div class="row g-6" style="width: 50%;">  
+        <div class="col">
+        <div id="cardGasto" class="card h-100 hover click-effect">
+        <img src="../img/Alza.JPG" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title" id="totalIngreso">Card title</h4>
+            <p class="card-text">INGRESOS.</p>
+        </div>
+        </div>
+        </div>
+
+        <div class="col">
+        <div id="cardIngreso" class="card h-100 hover click-effect">
+        <img src="../img/Baja.JPG" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title" id="totalGasto">Card title</h4>
+            <p class="card-text">GASTOS.</p>
+        </div>
+        </div>
+        </div>
+        <div class="col">
+        <div id="cardBalance" class="card h-100 hover click-effect">
+        <img src="../img/Balance.JPG" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title" id="resultadoBalance">Card title</h4>
+            <p class="card-text">BALANCE TOTAL</p>
+        </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+        
+
+    <!------------------------------MODAL------------------------------->
+
+        <!-- MODAL CALCULADORA -->
+        <div class="modal fade" id="calculatorModal" tabindex="-1" role="dialog" aria-labelledby="calculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="calculatorModalLabel">Calculadora</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <div id="calculator-container">
+        <input type="text" id="display" readonly>
+        <br>
+        <button onclick="addNumber(7)">7</button>
+        <button onclick="addNumber(8)">8</button>
+        <button onclick="addNumber(9)">9</button>
+        <button onclick="addOperator('/')" class="operator">÷</button>
+
+        <button onclick="addNumber(4)">4</button>
+        <button onclick="addNumber(5)">5</button>
+        <button onclick="addNumber(6)">6</button>
+        <button onclick="addOperator('*')" class="operator">x</button>
+
+        <button onclick="addNumber(1)">1</button>
+        <button onclick="addNumber(2)">2</button>
+        <button onclick="addNumber(3)">3</button>
+        <button onclick="addOperator('-')" class="operator">-</button>
+
+        <button onclick="addNumber(0)">0</button>
+        <button onclick="addDecimal()">.</button>
+        <button onclick="calculate()" class="equal">=</button>
+        <button onclick="addOperator('+')" class="operator">+</button>
+
+        <button onclick="clearDisplay()" class="clear">C</button>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <!-- MODAL ELIMINAR DATOS -->
+        <div class="modal fade" id="eliminarDatos" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="eliminarModalLabel">Eliminar elemento del array</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+        <p>Selecciona el elemento que deseas eliminar:</p>
+        <ul id="elementosLista"></ul>
+        </div>
+        <div class="modal-footer">
+            </div>
+        <button type="text" class="btn btn-danger"   id="eliminarBtn2" data-bs-dismiss="modal">Finalizar</button>
+        </div>
+        </div>
+        </div>
+
+
+
+
+        <!--MODAL PARA AGREGAR TABLA-->
+
+        <div class="modal fade" id="idModalAgregarTabla" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5 titleModal" id="exampleModalLabel">CREAR TABLA</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form>
+        <div class="mb-3">
+            <label for="tablaNombre" class="col-form-label tablaNombre">Nombre de la nueva tabla:</label>
+            <input type="text" class="form-control" id="tablaNombre">
+        </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="text" class="btn btn-primary" id="guardarTabla" data-bs-dismiss="modal">Guardar</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <!--MODAL VER TABLAS-->
+        <div class="modal fade" id="idModalVerTablas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Seleccionar Area para operar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+        <div class="col-12">
+        <form class="row g-1 needs-validation"  id="formCarga" novalidate>
+            <div class="col-md-12">
+            <select class="form-select" id="selectTabla" required>
+                <option selected disabled value="">Select</option>
+                </select>
+            </div>
+        </form>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="text" id="seleccionarTabla" class="btn btn-success" data-bs-dismiss="modal">Seleccionar </button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
 
         <!--MODAL PARA AGREGAR DATOS-->
         <div class="modal fade" id="idModalAgregarDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Subcategoria</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <div class="col-12">
-                    <form class="row g-1 needs-validation"  id="formCarga" novalidate>
-                        <h2>CARGA DE DATOS</h2>
+        <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Realizar Carga de Datos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+        <div class="col-12">
+            <form class="row g-1 needs-validation"  id="formCarga" novalidate>
 
-                        <div class="col-md-6">
-                            <label for="creador" class="form-label text-light">Usuario</label>
-                            <div class="input-group has-validation">
-                                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                <input type="text" class="form-control" id="creadorAdd"  placeholder="@Username" aria-describedby="inputGroupPrepend" required>
-                                <div class="invalid-feedback">
-                                Please choose a username.
-                                </div>
-                            </div>
-                            </div>
-
-                        <div class="col-md-6">
-                        <label for="validationCustom01" class="form-label text-light">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Nombre"  id="validationCustom01" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="fecha" class="form-label text-light">Fecha:</label>
-                            <input type="date" class="form-control" id="fechaAdd" name="fecha">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="tipoMovimiento" class="form-label text-light">Entrada</label>
-                            <select class="form-select" id="tipoMovimientoAdd" onchange="listaDependiente()" name="tipoMovimiento">
-                            <option selected disabled value="">Select</option>
-                            <option value="ingreso">Ingreso</option>
-                            <option value="gasto">Gasto</option>
-                            </select>
-                            <div class="invalid-feedback">
-                            Please select a valid state.
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                        <label for="tipoAdd" class="form-label text-light">SubCategoria</label>
-                        <select class="form-select" id="tipoAdd" required>
-                            <option selected disabled value="">Select</option>
-                    
-                        </select>
+                <div class="col-md-6">
+                    <label for="creador" class="form-label">Usuario</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" class="form-control" id="creadorAdd"  placeholder="@Username" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
-                            Please select a valid state.
+                        Please choose a username.
                         </div>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="monto" class="form-label text-light">Monto</label>
-                            <div class="input-group has-validation">
-                            <span class="input-group-text" id="inputGroupPrepend">$</span>
-                            <input type="number" class="form-control" id="montoAdd" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Please choose a username.
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                        <button class="btn btn-primary" type="button"  id="guardarDatos" >Guardar</button>
-                        </div>
-                        <div class="col-6">
                     </div>
-                    </form>
+                    </div>
+
+                <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre"  id="validationCustom01" value="" required>
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="text" id="guardarcSubCatBtn" class="btn btn-success" data-bs-dismiss="modal">Guardar </button>
-            </div>
-            </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="fecha" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control" id="fechaAdd" name="fecha">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="tipoMovimiento" class="form-label">Entrada</label>
+                    <select class="form-select" id="tipoMovimientoAdd" onchange="listaDependiente()" name="tipoMovimiento">
+                    <option selected disabled value="">Select</option>
+                    <option value="ingreso">Ingreso</option>
+                    <option value="gasto">Gasto</option>
+                    </select>
+                    <div class="invalid-feedback">
+                    Please select a valid state.
+                    </div>
+                </div>
+                <div class="col-md-12">
+                <label for="tipoAdd" class="form-label">SubCategoria</label>
+                <select class="form-select" id="tipoAdd" required>
+                    <option selected disabled value="">Select</option>
+                    <option value="nueva_subcategoria">Agregar nueva subcategoria</option>
+            
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid state.
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="monto" class="form-label">Monto</label>
+                    <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">$</span>
+                    <input type="number" class="form-control" id="montoAdd" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                    </div>
+                </div>
+                <div class="col-6">
+            </form>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="text" id="guardarDatos" class="btn btn-success" data-bs-dismiss="modal">Guardar </button>
+        </div>
+        </div>
         </div>
         </div>
 
-      
-    </main>
+        <!--------------MODAL PARA AGREGAR SUBCATEGORIAS--------------->
+        <div class="modal fade" id="idModalAgregarSubcategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar Subcategoria</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <form id="modalForm">
+                </select><br><br>
+                <label for="descripcion">Nueva Subcategoria:</label>
+                <input type="text" id="descripcion"><br><br>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="text" id="guardarcSubCatBtn" class="btn btn-success" data-bs-dismiss="modal">Guardar </button>
+        </div>
+        </div>
+        </div>
+        </div>
 
+</main>
+
+
+<footer>
+    <div>
+    <p> CopyRight Todos los derechos reservados</p>
+    </div>
     
-    <footer></footer>
-    <!--Script de Bootstrap-->
+    <div class="redesSociales">
+        <img src="../img/IG.png" alt="">
+        <img src="../img/ws.png" alt="">
+        <img src="../img/mail.png" alt="">
+    </div>
+    <div>
+        <p> Hora actual: <span id="fechaLuxon" class="fecha"></span></p>
+        </div>
+</footer>
+
+
+<!--Script de tooltips-->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+
+    tippy('#apiDolar', {
+    content: 'ACA PUEDES OBSERVAR LA COTIZACION DEL DOLAR AL A FECHA',
+    delay:200,
+    theme: 'translucent',
+    animation: 'fade',
+
+
+    });
+
+    tippy('#destacado', {
+    content: 'PRIMERO DEBES CREAR UNA NUEVA TABLA PARA COMENZAR A TRABAJAR',
+    });
+
+    tippy('#nombreTablaSeleccionada', {
+    content: 'Este es el titulo del area en la que estas trabajando',
+    });
+
+    tippy('#agregarDatos', {
+    content: 'Aqui registros a tu area de trabajo seleccionada',
+    });
+    tippy('#ideliminarDatos', {
+    content: 'Eliminar informacion por completo de tu area de trabajo',
+    });
+
+
+    tippy('#cardsTotales', {
+    content: 'Aqui se refleja un balance de cada tipo de Movimiento -  Se puede clickear cada Card para filtrar las tablas.',
+    });
+</script>
+
+<!--Script de Bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
 </script>
+<!--Luxon-->
+<script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
 <!--Script toastify-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <!--Script Sweet Alert-->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!--Script JS Propios-->
 
-<script srs="../JS/functionLista.js"></script>
-<script srs="../JS/class.js"></script>
-<script src="../balance.js"></script>
+<!--Script JS Propios-->
+<script src="../JS/resaltar.js"></script>
+<script src="../JS/arrays.js"></script>
+<script src="../main.js"></script>
+<script src="../JS/Listas.js"></script>
+<script src="../JS/class.js"></script>
+<script src="../JS/calculos.js"></script>
 <script src="../JS/buscador.js"></script>
+<script src="../JS/ordenar.js"></script>
+<script src="../JS/ApiDolar.js"></script>
 
 
 </body>
