@@ -481,7 +481,7 @@ h1 {
   box-shadow: -20px 10px 33px 1px rgba(0, 0, 0, 0.7);
 }
 
-footer {
+.foot {
   background-color: rgb(20, 20, 20);
   color: white;
   display: flex;
@@ -493,22 +493,22 @@ footer {
   bottom: 0;
   padding: 2%;
 }
-footer .fecha {
+.foot .fecha {
   color: wheat;
 }
-footer .fecha p {
+.foot .fecha p {
   color: aliceblue;
 }
-footer p {
+.foot p {
   font-family: "Comfortaa", cursive;
   font-size: 1rem;
   text-align: center;
 }
-footer .redesSociales {
+.foot .redesSociales {
   display: flex;
   gap: 20%;
 }
-footer img {
+.foot img {
   width: 50px;
 }
 
